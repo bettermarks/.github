@@ -2,12 +2,12 @@
 
 Short summary of the change.
 
-Fixes <link to jira ticket>
+Fixes [Jira ticket]()
 
 ## Type of change
 
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Bug fix
+- [ ] New feature 
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 
 # How Has This Been Tested?

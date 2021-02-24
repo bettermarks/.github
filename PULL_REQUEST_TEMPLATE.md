@@ -2,7 +2,7 @@
 
 Short summary of the change.
 
-Fixes https://bettermarks.atlassian.net/browse/BM-
+Relates to https://bettermarks.atlassian.net/browse/BM-
 
 ## Type of change
 
@@ -14,5 +14,5 @@ Fixes https://bettermarks.atlassian.net/browse/BM-
 
 Please describe the tests that you ran to verify your changes
 
-- [ ] Test A
-- [ ] Test B
+- Test A
+- Test B

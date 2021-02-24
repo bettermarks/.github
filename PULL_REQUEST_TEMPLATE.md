@@ -2,7 +2,7 @@
 
 Short summary of the change.
 
-Fixes [Jira ticket]()
+Fixes https://bettermarks.atlassian.net/browse/BM-
 
 ## Type of change
 

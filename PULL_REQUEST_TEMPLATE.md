@@ -1,18 +1,9 @@
-# Description
+<!-- Source https://github.com/bettermarks/.github#PULL_REQUEST_TEMPLATE.md -->
+REPLACE the above comment and this text, to allow any future reader,
+to understand WHY you are making this change now.
 
-Short summary of the change.
+Can you imagine this change breaks anything when it lands or reaches users?
+Either REPLACE this section with what you did/tested/checked/assumed to mitigate the risk.
+Or DROP this section if you don't see any risk.
 
-Relates to https://bettermarks.atlassian.net/browse/BM-
-
-## Type of change
-
-- [ ] Bug fix
-- [ ] New feature 
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-
-# How Has This Been Tested?
-
-Please describe the tests that you ran to verify your changes
-
-- Test A
-- Test B
+https://bettermarks.atlassian.net/browse/BM-

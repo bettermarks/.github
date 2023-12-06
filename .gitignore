@@ -1,9 +1,10 @@
-### Project specific ignores
-# add your own here after making a copy
+### Add your custom ignores below after making a copy
 
-#### https://github.com/bettermarks/.github#.gitignore
+
+
+## README & SOURCE https://github.com/bettermarks/.github#gitignore
+
 ###User related files
-# so you don't have to have it in ~/.gitignore ;)
 
 ## Secrets / env variables
 .env*

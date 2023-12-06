@@ -1,3 +1,4 @@
+
 ### User related files
 # so you don't have to have it in ~/.gitignore ;)
 
@@ -77,3 +78,5 @@ node_modules
 .next
 .nuxt
 dist
+
+# source: https://github.com/bettermarks/.github#.gitignore

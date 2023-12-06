@@ -8,6 +8,9 @@ Every change to this repository has to be approved by two team members.
 
 ## .gitignore
 
+Provides common ignore patters for user specific files like secrets, notes, editor configs
+and anything related to Typescript-based Infrastructure as Code.
+
 Is not automatically used, but you can copy/sync it using
 ```bash
 curl -O https://github.com/bettermarks/.github/raw/main/.gitignore

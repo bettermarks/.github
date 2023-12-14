@@ -43,7 +43,7 @@ and anything related to Typescript-based Infrastructure as Code.
 
 you can download it to a project/repository:
 ```bash
-curl -O https://github.com/bettermarks/.github/raw/main/.gitignore
+curl -LO https://github.com/bettermarks/.github/raw/main/.gitignore
 ```
 
 It can also be used as a default for the current user on your (bettermarks) machine, run:

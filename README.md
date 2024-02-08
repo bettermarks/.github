@@ -38,7 +38,7 @@ so they **need to be copied manually** to use them.
 
 ### .gitignore
 
-Provides common ignore patters for user specific files like secrets, notes, editor configs, 
+Provides common ignore patterns for user specific files like secrets, notes, editor configs, 
 and anything related to Typescript-based Infrastructure as Code.
 
 you can download it to a project/repository:

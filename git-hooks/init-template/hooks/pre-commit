@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
+# source https://github.com/bettermarks/.github/git-hooks/
+echo "executing $0 in $(pwd)"
 set -eu
 # see https://pre-commit.com/#automatically-enabling-pre-commit-on-repositories
+# instructions to enable it are in the top level README
 if [ -f .pre-commit-config.yaml ]; then
     echo 'pre-commit configuration detected, but `pre-commit install` was never run' 1>&2
     exit 1

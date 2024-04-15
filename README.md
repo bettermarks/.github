@@ -61,23 +61,22 @@ There are two widely used options for pre-commit hooks configured inside a repos
 - <https://pre-commit.com> (language agnostic)
 - <https://typicode.github.io/husky/> (most streamlined npm/pnpm/yarn integration)
 
-Since some repositories use `pre-commit`, configure the following after installing the tool:
+Since some repositories use `pre-commit`, configure the following after installing it
+using your package manager of choice or by following [the docs](https://pre-commit.com/#install):
 
 ```bash
 gh repo clone bettermarks/.github
 git config --global init.templateDir $(pwd)/.github/git-hooks/init-template
 ```
 
-
-#### with pre-commit
+#### in repos using pre-commit
 
 `pre-commit` is a "language agnostic" tool which hides away the complexity of installing the required tools globally,
-but the integraiton i not ideal for npm base projects.
+but the integration is not ideal for npm/pnpm/yarn based projects.
 
-1. Install `pre-commit` to your system using your package manager of choice or by following [the docs](https://pre-commit.com/#install).
-2. To enable the configured git hooks run `pre-commit install`
-3. Make sure that the docs in the repository provide a hint that you should do step 2 when cloning the repository!
-4. add the following under the `repos` key in the `.pre-commit-config.yaml`:
+1. To enable the configured git hooks for a repository run `pre-commit install`
+2. Make sure that the docs in the repository provide a hint that you should do step 2 when cloning the repository!
+3. add the following under the `repos` key in the `.pre-commit-config.yaml`:
 ```yaml
 repos:
   - repo: https://github.com/bettermarks/.github
@@ -90,7 +89,7 @@ repos:
       - id: pre-commit-autoupdate
 ```
 
-#### with husky
+#### in repos using husky
 
 if the repository is a top level npm/pnpm/yarn project, you most likely prefer to use (husky)[https://typicode.github.io/husky/].
 
@@ -99,7 +98,9 @@ which needs ot be added to the version control system.
 
 Download a copy of the hook you would like to add to the `.husky` directory
 ```bash
-(cd .husky && curl -LO https://github.com/bettermarks/.github/raw/main/git-hooks/no-commit-to-default-branch)
+(cd .husky && \
+ curl -LO https://github.com/bettermarks/.github/raw/main/git-hooks/no-commit-to-default-branch && \
+ chmod +x no-commit-to-default-branch)
 ```
 and invoke it from your pre-commit hook, by passing the default branch name as the first argument
 ```bash

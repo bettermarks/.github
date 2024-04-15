@@ -50,5 +50,45 @@ It can also be used as a default for the current user on your (bettermarks) mach
 ```bash
 cd ~
 gh repo clone bettermarks/.github
-git config --global core.excludesfile ~/.github/.gitignore
+git config --global core.excludesfile $(pwd)/.gitignore
+```
+
+### git-hooks
+
+Provides common pre-commit hooks that can be reused in other repositories without a lot of config.
+
+You have to deice for one of the below options, since they both the same mechanism,
+so they would override each other.
+
+#### with pre-commit
+
+`pre-commit` is a "language agnostic" tool which hides away the complexity of installing the required tools globally,
+but the integraiton i not ideal for npm base projects.
+
+1. Install `pre-commit` to your system using your package manager of choice or by following [the docs](https://pre-commit.com/#install).
+2. To enable the configured git hooks run `pre-commit install`
+3. Make sure that the docs in the repository provide a hint that you should do step 2 when cloning the repository!
+4. add the following under the `repos` key in the `.pre-commit-config.yaml`:
+```yaml
+  - repo: https://github.com/bettermarks/.github
+    hooks:
+      - id: no-commit-to-default-branch
+        args: 
+          - main # or master or whatever it your default branch
+```
+
+#### with husky
+
+if the repository is a top level npm/pnpm/yarn project, you most likely prefer to use (husky)[https://typicode.github.io/husky/].
+
+After configuring husky including the `prepare` script, there will be a `.husky` directory,
+which needs ot be added to the version control system.
+
+Download a copy of the hook you would like to add to the `.husky` directory
+```bash
+(cd .husky && curl -LO https://github.com/bettermarks/.github/raw/main/git-hooks/no-commit-to-default-branch)
+```
+and invoke it from your pre-commit hook, by passing the default branch name as the first argument
+```bash
+echo ".husky/no-commit-to-default-branch main" >> .husky/pre-commit
 ```

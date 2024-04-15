@@ -1,0 +1,13 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: local
+    hooks:
+    - id: no-commit-to-default-branch
+      name: No commit to default branch
+      entry: git-hooks/no-commit-to-default-branch
+      args:
+        [main]
+      always_run: true
+      language: script
+      pass_filenames: false

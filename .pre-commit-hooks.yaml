@@ -4,3 +4,9 @@
   always_run: true
   language: script
   pass_filenames: false
+- id: pre-commit-autoupdate
+  name: pre-commit autoupdate
+  entry: pre-commit autoupdate
+  language: system
+  always_run: true
+  pass_filenames: false

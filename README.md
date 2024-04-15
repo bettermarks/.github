@@ -70,11 +70,15 @@ but the integraiton i not ideal for npm base projects.
 3. Make sure that the docs in the repository provide a hint that you should do step 2 when cloning the repository!
 4. add the following under the `repos` key in the `.pre-commit-config.yaml`:
 ```yaml
+repos:
   - repo: https://github.com/bettermarks/.github
+    # to get the latest SHA use `gh api /repos/bettermarks/.github/commits/HEAD -q .sha`
+    rev: SHA 
     hooks:
       - id: no-commit-to-default-branch
-        args: 
-          - main # or master or whatever it your default branch
+        # the default branch of the repository containing this yaml file)
+        args: [main]
+      - id: pre-commit-autoupdate
 ```
 
 #### with husky

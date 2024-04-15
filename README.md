@@ -50,15 +50,24 @@ It can also be used as a default for the current user on your (bettermarks) mach
 ```bash
 cd ~
 gh repo clone bettermarks/.github
-git config --global core.excludesfile $(pwd)/.gitignore
+git config --global core.excludesfile $(pwd)/.github/.gitignore
 ```
 
 ### git-hooks
 
 Provides common pre-commit hooks that can be reused in other repositories without a lot of config.
 
-You have to deice for one of the below options, since they both the same mechanism,
-so they would override each other.
+There are two widely used options for pre-commit hooks configured inside a repository:
+- <https://pre-commit.com> (language agnostic)
+- <https://typicode.github.io/husky/> (most streamlined npm/pnpm/yarn integration)
+
+Since some repositories use `pre-commit`, configure the following after installing the tool:
+
+```bash
+gh repo clone bettermarks/.github
+git config --global init.templateDir $(pwd)/.github/git-hooks/init-template
+```
+
 
 #### with pre-commit
 

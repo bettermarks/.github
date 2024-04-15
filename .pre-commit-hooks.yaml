@@ -1,9 +1,16 @@
+# this file makes it possible to use this repository as a "repo" in a .pre-commit-config.yaml
+# see https://pre-commit.com/#creating-new-hooks
+
+# prevents commits to the main/master/default branch
+# the branch has to be passed as the first argument!
 - id: no-commit-to-default-branch
   name: No commit to default branch
   entry: git-hooks/no-commit-to-default-branch
   always_run: true
   language: script
   pass_filenames: false
+# updates versions and SHAs in a .pre-commit-config.yaml
+# see https://pre-commit.com/#pre-commit-autoupdate
 - id: pre-commit-autoupdate
   name: pre-commit autoupdate
   entry: pre-commit autoupdate

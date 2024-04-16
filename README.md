@@ -61,15 +61,22 @@ There are two widely used options for pre-commit hooks configured inside a repos
 - <https://pre-commit.com> (language agnostic)
 - <https://typicode.github.io/husky/> (most streamlined npm/pnpm/yarn integration)
 
-Since some repositories use `pre-commit`, configure the following after installing it
-using your package manager of choice or by following [the docs](https://pre-commit.com/#install):
-
+Since some repositories use `pre-commit`, 
+to not forget to run `pre-commit install` after cloning repository:
+1. install `pre-commit`
+using your package manager of choice or by following [the docs](https://pre-commit.com/#install)
+2. configure global (user level) init template for git 
 ```bash
 gh repo clone bettermarks/.github
 git config --global init.templateDir $(pwd)/.github/git-hooks/init-template
 ```
+3. in the directory containing the repositories you already cloned,
+   activate pre-commit in every repository containing a `.pre-commit-config.yaml`:
+```bash
+find . -maxdepth 1 -name .pre-commit-config.yaml -type f -execdir pwd \; -execdir pre-commit install \;
+```
 
-#### in repos using pre-commit
+#### add a hook to a repo using pre-commit
 
 `pre-commit` is a "language agnostic" tool which hides away the complexity of installing the required tools globally,
 but the integration is not ideal for npm/pnpm/yarn based projects.
@@ -89,7 +96,7 @@ repos:
       - id: pre-commit-autoupdate
 ```
 
-#### in repos using husky
+#### add hook to a repo using husky
 
 if the repository is a top level npm/pnpm/yarn project, you most likely prefer to use (husky)[https://typicode.github.io/husky/].
 

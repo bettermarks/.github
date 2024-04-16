@@ -1,10 +1,21 @@
 #!/usr/bin/env bash
-# source https://github.com/bettermarks/.github/git-hooks/
-echo "executing $0 in $(pwd)"
+# source https://github.com/bettermarks/.github#git-hooks
+echo "executing $0 in $(pwd)" 1>&2
 set -eu
 # see https://pre-commit.com/#automatically-enabling-pre-commit-on-repositories
 # instructions to enable it are in the top level README
+# to disable ALL hooks for a single commit use
+#   git commit --no-verify ...
+# to disable this hook for the current repository permanently, run
+#   rm .git/hooks/pre-commit
+# to disable adding this hook after cloning a repo, run
+#   git config --global --unset init.templatePath
 if [ -f .pre-commit-config.yaml ]; then
-    echo 'pre-commit configuration detected, but `pre-commit install` was never run' 1>&2
+    if ! command -v pre-commit >/dev/null 2>/dev/null; then
+      echo "To install the pre-commit tool, use your package manager or follow these instructions:" 1>&2
+      echo "  https://pre-commit.com/#installation" 1>&2
+    fi
+    echo 'Jo, this repository contains a pre-commit configuration, to enable it run' 1>&2
+    echo '  pre-commit install' 1>&2
     exit 1
 fi

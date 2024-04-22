@@ -1,8 +1,14 @@
 #! /usr/bin/env bash
 # source https://github.com/bettermarks/.github/git-hooks/
-echo "executing $0 in $(pwd)"
+echo "executing $0 in $PWD"
 set -eu
-current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+if [ $(ls -A1 .git/refs/heads | wc -w) -eq 0 ]; then
+  echo "there is no local branch, so there is no need to prevent any commit"
+  exit 0
+fi
+
+current_branch=$(git branch --show-current)
 
 # needs to be passed as the first argument, should be "main" or "master" in most cases
 default_branch=$1

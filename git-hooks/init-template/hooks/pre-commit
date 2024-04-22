@@ -15,7 +15,7 @@ if [ -f .pre-commit-config.yaml ]; then
       echo "To install the pre-commit tool, use your package manager or follow these instructions:" 1>&2
       echo "  https://pre-commit.com/#installation" 1>&2
     fi
-    echo 'Jo, this repository contains a pre-commit configuration, to enable it run' 1>&2
+    echo 'Yo, this repository contains a pre-commit configuration, to enable it run' 1>&2
     echo '  pre-commit install' 1>&2
     exit 1
 fi

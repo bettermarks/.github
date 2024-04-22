@@ -50,7 +50,7 @@ It can also be used as a default for the current user on your (bettermarks) mach
 ```bash
 cd ~
 gh repo clone bettermarks/.github
-git config --global core.excludesfile $(pwd)/.github/.gitignore
+git config --global core.excludesfile $PWD/.github/.gitignore
 ```
 
 ### git-hooks
@@ -68,7 +68,7 @@ using your package manager of choice or by following [the docs](https://pre-comm
 2. configure global (user level) init template for git 
 ```bash
 gh repo clone bettermarks/.github
-git config --global init.templateDir $(pwd)/.github/git-hooks/init-template
+git config --global init.templateDir $PWD/.github/git-hooks/init-template
 ```
 3. in the directory containing the repositories you already cloned,
    activate pre-commit in every repository containing a `.pre-commit-config.yaml`:

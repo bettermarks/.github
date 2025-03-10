@@ -9,6 +9,7 @@ or DROP this section if you don't see any risks.
 
 **How has this been documented?**
 
+CONSIDER who will be affected by this change and inform/consult them before merging,
 REPLACE this section with how you documented these changes (add a link if one exists)
 or DROP this section if you don't see any need.
 

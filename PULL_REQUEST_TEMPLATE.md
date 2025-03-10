@@ -7,4 +7,9 @@ to understand WHY you are making this change now.
 REPLACE this section with how you tested to mitigate risks related to these changes
 or DROP this section if you don't see any risks.
 
+**How has this been documented?**
+
+REPLACE this section with how you documented these changes (add a link if one exists)
+or DROP this section if you don't see any need.
+
 https://bettermarks.atlassian.net/browse/BM-

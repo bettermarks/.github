@@ -13,9 +13,4 @@ CONSIDER who will be affected by this change and inform/consult them before merg
 REPLACE this section with how you documented these changes (add a link if one exists)
 or DROP this section if you don't see any need.
 
-**Is this an interesting topic to present in the DevOps Weekly?**
-
-REPLACE this section with a link to your entry in the agenda,
-or DROP this section if you don't see any need.
-
 https://bettermarks.atlassian.net/browse/BM-

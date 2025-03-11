@@ -11,12 +11,18 @@ if [ -s .envrc ]; then
   eval $(direnv export bash)
 fi
 
-# enable nvm (tweak it when
+# tweak your local copy to only use the right tool
+
+# using fnm
+if [ -s .nvmrc ]; then
+  eval "$(fnm env --use-on-cd --corepack-enabled --shell bash)"
+fi
+
+# enable nvm
 if [ -s .nvmrc ]; then
   echo "enabling nvm"
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
   node --version
-  # make pnpm/yarn available
   corepack enable
 fi

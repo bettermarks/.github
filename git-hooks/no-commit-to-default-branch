@@ -1,7 +1,14 @@
 #! /usr/bin/env bash
-# source https://github.com/bettermarks/.github/git-hooks/
+# source https://github.com/bettermarks/.github/git-hooks/ version 2025-03-26
 echo "executing $0 in $PWD"
 set -eu
+
+# github sets CI=true and the default branch is usually not present locally inside github actions
+# for more picky options from the workflow side see https://typicode.github.io/husky/how-to.html#skipping-git-hooks
+if [ ${CI:-false} = "true" ]; then
+  echo "Running in CI environment, will not prevent any commit."
+  exit 0
+fi
 
 if [ $(ls -A1 .git/refs/heads | wc -w) -eq 0 ]; then
   echo "there is no local branch, so there is no need to prevent any commit"

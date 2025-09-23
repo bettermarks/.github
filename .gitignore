@@ -22,6 +22,10 @@ notes.md
 ## VS Code
 .vscode
 
+## Cursor
+.cursor
+.cursorrules
+
 ## JetBrains / IntelliJ / WebStorm / PyCharm / ...
 .idea
 *.iml
